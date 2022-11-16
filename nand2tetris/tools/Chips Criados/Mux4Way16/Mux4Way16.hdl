@@ -1,0 +1,137 @@
+CHIP Mux4Way16 {
+    IN a[16], b[16], c[16], d[16], sel[2];
+    OUT out[16];
+
+    PARTS:
+    	Not (in=sel[0], out=NotSel0);
+	Not (in=sel[1], out=NotSel1);
+	
+	//Channel A
+	And3Way (a=NotSel0,b=NotSel1,c=a[0], out=outA_0);
+	And3Way (a=NotSel0,b=NotSel1,c=a[1], out=outA_1);
+	And3Way (a=NotSel0,b=NotSel1,c=a[2], out=outA_2);
+	And3Way (a=NotSel0,b=NotSel1,c=a[3], out=outA_3);
+	And3Way (a=NotSel0,b=NotSel1,c=a[4], out=outA_4);
+	And3Way (a=NotSel0,b=NotSel1,c=a[5], out=outA_5);
+	And3Way (a=NotSel0,b=NotSel1,c=a[6], out=outA_6);
+	And3Way (a=NotSel0,b=NotSel1,c=a[7], out=outA_7);
+	And3Way (a=NotSel0,b=NotSel1,c=a[8], out=outA_8);
+	And3Way (a=NotSel0,b=NotSel1,c=a[9], out=outA_9);
+	And3Way (a=NotSel0,b=NotSel1,c=a[10], out=outA_10);
+	And3Way (a=NotSel0,b=NotSel1,c=a[11], out=outA_11);
+	And3Way (a=NotSel0,b=NotSel1,c=a[12], out=outA_12);
+	And3Way (a=NotSel0,b=NotSel1,c=a[13], out=outA_13);
+	And3Way (a=NotSel0,b=NotSel1,c=a[14], out=outA_14);
+	And3Way (a=NotSel0,b=NotSel1,c=a[15], out=outA_15);
+
+	//Channel B
+	And3Way (a=NotSel0,b=sel[1],c=b[0], out=outB_0);
+	And3Way (a=NotSel0,b=sel[1],c=b[0], out=outB_1);
+	And3Way (a=NotSel0,b=sel[1],c=b[2], out=outB_2);
+	And3Way (a=NotSel0,b=sel[1],c=b[3], out=outB_3);
+	And3Way (a=NotSel0,b=sel[1],c=b[4], out=outB_4);
+	And3Way (a=NotSel0,b=sel[1],c=b[5], out=outB_5);
+	And3Way (a=NotSel0,b=sel[1],c=b[6], out=outB_6);
+	And3Way (a=NotSel0,b=sel[1],c=b[7], out=outB_7);
+	And3Way (a=NotSel0,b=sel[1],c=b[8], out=outB_8);
+	And3Way (a=NotSel0,b=sel[1],c=b[9], out=outB_9);
+	And3Way (a=NotSel0,b=sel[1],c=b[10], out=outB_10);
+	And3Way (a=NotSel0,b=sel[1],c=b[11], out=outB_11);
+	And3Way (a=NotSel0,b=sel[1],c=b[12], out=outB_12);
+	And3Way (a=NotSel0,b=sel[1],c=b[13], out=outB_13);
+	And3Way (a=NotSel0,b=sel[1],c=b[14], out=outB_14);
+	And3Way (a=NotSel0,b=sel[1],c=b[15], out=outB_15);
+	
+	//Channel C
+	And3Way (a=sel[0],b=NotSel1,c=c[0], out=outC_0);
+	And3Way (a=sel[0],b=NotSel1,c=c[1], out=outC_1);
+	And3Way (a=sel[0],b=NotSel1,c=c[2], out=outC_2);
+	And3Way (a=sel[0],b=NotSel1,c=c[3], out=outC_3);
+	And3Way (a=sel[0],b=NotSel1,c=c[4], out=outC_4);
+	And3Way (a=sel[0],b=NotSel1,c=c[5], out=outC_5);
+	And3Way (a=sel[0],b=NotSel1,c=c[6], out=outC_6);
+	And3Way (a=sel[0],b=NotSel1,c=c[7], out=outC_7);
+	And3Way (a=sel[0],b=NotSel1,c=c[8], out=outC_8);
+	And3Way (a=sel[0],b=NotSel1,c=c[9], out=outC_9);
+	And3Way (a=sel[0],b=NotSel1,c=c[10], out=outC_10);
+	And3Way (a=sel[0],b=NotSel1,c=c[11], out=outC_11);
+	And3Way (a=sel[0],b=NotSel1,c=c[12], out=outC_12);
+	And3Way (a=sel[0],b=NotSel1,c=c[13], out=outC_13);
+	And3Way (a=sel[0],b=NotSel1,c=c[14], out=outC_14);
+	And3Way (a=sel[0],b=NotSel1,c=c[15], out=outC_15);
+	
+	//Channel D
+	And3Way (a=sel[0],b=sel[1],c=d[0], out=outD_0);
+	And3Way (a=sel[0],b=sel[1],c=d[1], out=outD_1);
+	And3Way (a=sel[0],b=sel[1],c=d[2], out=outD_2);
+	And3Way (a=sel[0],b=sel[1],c=d[3], out=outD_3);
+	And3Way (a=sel[0],b=sel[1],c=d[4], out=outD_4);
+	And3Way (a=sel[0],b=sel[1],c=d[5], out=outD_5);
+	And3Way (a=sel[0],b=sel[1],c=d[6], out=outD_6);
+	And3Way (a=sel[0],b=sel[1],c=d[7], out=outD_7);
+	And3Way (a=sel[0],b=sel[1],c=d[8], out=outD_8);
+	And3Way (a=sel[0],b=sel[1],c=d[9], out=outD_9);
+	And3Way (a=sel[0],b=sel[1],c=d[10], out=outD_10);
+	And3Way (a=sel[0],b=sel[1],c=d[11], out=outD_11);
+	And3Way (a=sel[0],b=sel[1],c=d[12], out=outD_12);
+	And3Way (a=sel[0],b=sel[1],c=d[13], out=outD_13);
+	And3Way (a=sel[0],b=sel[1],c=d[14], out=outD_14);
+	And3Way (a=sel[0],b=sel[1],c=d[15], out=outD_15);
+
+	//16-bits Output
+
+	//OR A[16] AND B[16]
+	Or (a=outA_0, b=outB_0, out=AorB_0);
+	Or (a=outA_1, b=outB_1, out=AorB_1);
+	Or (a=outA_2, b=outB_2, out=AorB_2);
+	Or (a=outA_3, b=outB_3, out=AorB_3);
+	Or (a=outA_4, b=outB_4, out=AorB_4);
+	Or (a=outA_5, b=outB_5, out=AorB_5);
+	Or (a=outA_6, b=outB_6, out=AorB_6);
+	Or (a=outA_7, b=outB_7, out=AorB_7);
+	Or (a=outA_8, b=outB_8, out=AorB_8);
+	Or (a=outA_9, b=outB_9, out=AorB_9);
+	Or (a=outA_10, b=outB_10, out=AorB_10);
+	Or (a=outA_11, b=outB_11, out=AorB_11);
+	Or (a=outA_12, b=outB_12, out=AorB_12);
+	Or (a=outA_13, b=outB_13, out=AorB_13);
+	Or (a=outA_14, b=outB_14, out=AorB_14);
+	Or (a=outA_15, b=outB_15, out=AorB_15);
+	
+
+	//OR C[16] AND D[16]
+	Or (a=outC_0, b=outD_0, out=CorD_0);
+	Or (a=outC_1, b=outD_1, out=CorD_1);
+	Or (a=outC_2, b=outD_2, out=CorD_2);
+	Or (a=outC_3, b=outD_3, out=CorD_3);
+	Or (a=outC_4, b=outD_4, out=CorD_4);
+	Or (a=outC_5, b=outD_5, out=CorD_5);
+	Or (a=outC_6, b=outD_6, out=CorD_6);
+	Or (a=outC_7, b=outD_7, out=CorD_7);
+	Or (a=outC_8, b=outD_8, out=CorD_8);
+	Or (a=outC_9, b=outD_9, out=CorD_9);
+	Or (a=outC_10, b=outD_10, out=CorD_10);
+	Or (a=outC_11, b=outD_11, out=CorD_11);
+	Or (a=outC_12, b=outD_12, out=CorD_12);
+	Or (a=outC_13, b=outD_13, out=CorD_13);
+	Or (a=outC_14, b=outD_14, out=CorD_14);
+	Or (a=outC_15, b=outD_15, out=CorD_15);
+
+	//OR C[16] AND D[16] OR A[16] AND B[16]
+	Or (a=AorB_0, b=CorD_0, out=out[0]);
+	Or (a=AorB_1, b=CorD_1, out=out[1]);
+	Or (a=AorB_2, b=CorD_2, out=out[2]);
+	Or (a=AorB_3, b=CorD_3, out=out[3]);
+	Or (a=AorB_4, b=CorD_4, out=out[4]);
+	Or (a=AorB_5, b=CorD_5, out=out[5]);
+	Or (a=AorB_6, b=CorD_6, out=out[6]);
+	Or (a=AorB_7, b=CorD_7, out=out[7]);
+	Or (a=AorB_8, b=CorD_8, out=out[8]);
+	Or (a=AorB_9, b=CorD_9, out=out[9]);
+	Or (a=AorB_10, b=CorD_10, out=out[10]);
+	Or (a=AorB_11, b=CorD_11, out=out[11]);
+	Or (a=AorB_12, b=CorD_12, out=out[12]);
+	Or (a=AorB_13, b=CorD_13, out=out[13]);
+	Or (a=AorB_14, b=CorD_14, out=out[14]);
+	Or (a=AorB_15, b=CorD_15, out=out[15]);
+}

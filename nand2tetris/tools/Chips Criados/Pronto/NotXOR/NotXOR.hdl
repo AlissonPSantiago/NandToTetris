@@ -1,0 +1,13 @@
+CHIP NotXOR {
+	IN a, b;
+	OUT saida;
+
+	
+	PARTS:
+	Not (in=b, out=bNegado);
+	Not (in=a, out=aNegado);
+	And (a=a, b=bNegado, out=aEbNegado);
+	And (a=aNegado, b=b, out=aNegadoEb);
+	Or (a=aEbNegado, b=aNegadoEb, out=SaidaXor);
+	Not (in=SaidaXor, out=saida);
+}

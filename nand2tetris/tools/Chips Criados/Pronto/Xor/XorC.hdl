@@ -1,0 +1,12 @@
+CHIP XorC {
+	IN a,b;
+	OUT out;
+
+	PARTS:
+	Not (in=a, out=NotA);
+	Not (in=b, out=NotB);
+	And (a=NotA, b=b, out=NotAandB);
+	And (a=a, b=NotB, out=aAndNotB);
+	Or (a=NotAandB, b=aAndNotB, out=out);
+}
+	

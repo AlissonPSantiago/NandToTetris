@@ -1,0 +1,9 @@
+CHIP OrC {
+	IN a,b;
+	OUT out;
+	
+	PARTS:
+		Nand (a=a,b=a,out=NotA);
+		Nand (a=b,b=b,out=NotB);
+		Nand (a=NotA, b=NotB, out=out);
+}
