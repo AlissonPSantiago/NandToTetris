@@ -21,29 +21,8 @@ CHIP RAM8 {
     Not(in=address[2], out=NotC);
 
 
-    //Seleciona Registro 0
-    And3Way(a=NotA, b=NotB, c=NotC,out=SelR0);
+    DMux8Way(in = load, sel = address, a=SelR0, b=SelR1, c=SelR2, d=SelR3, e=SelR4, f=SelR5, g=SelR6, h=SelR7);
 
-    //Seleciona Registro 1
-    And3Way(a=address[0], b=NotB, c=NotC, out=SelR1);
-
-    //Seleciona Registro 2
-    And3Way(a=NotA, b=address[1], c=NotC, out=SelR2);
-
-    //Seleciona Registro 3
-    And3Way(a=address[0], b=address[1], c=NotC, out=SelR3);
-
-    //Seleciona Registro 4
-    And3Way(a=NotA, b=NotB, c=address[2], out=SelR4);
-
-    //Seleciona Registro 5
-    And3Way(a=address[0], b=NotB, c=address[2], out=SelR5);
-
-    //Seleciona Registro 6
-    And3Way(a=NotA, b=address[1], c=address[2], out=SelR6);
-
-    //Seleciona Registro 7
-    And3Way(a=address[0], b=address[1], c=address[2], out=SelR7);
 
     // Registrador 0
     And(a=SelR0, b=load, out=LoadR0);
