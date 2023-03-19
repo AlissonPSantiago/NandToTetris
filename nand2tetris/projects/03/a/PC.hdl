@@ -16,5 +16,18 @@ CHIP PC {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
-}
+    //Valor do loop incrementado
+    Inc16(in=LoopReg, out=RegInc);
+
+    // Mux para escolher se o input vai ser o feedback do registrador sem incremento ou incrementado pelo INC16
+    Mux16(a=LoopReg, b=RegInc, sel=inc,out=incOut);
+
+    // Mux para o load gravar o valor atual da entrada no contador
+    Mux16(a=incOut, b=in, sel=load, out=LoadOut);
+
+    // Mux para selecionar se reseta o contador ou nao
+    Mux16(a=LoadOut, b[0..15]=false, sel=reset, out=OutReset);
+
+    //Registrador para guardar o valor do contator
+    Register(in=OutReset, load=true, out=out,out=LoopReg);
+    }
