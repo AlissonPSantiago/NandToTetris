@@ -15,5 +15,70 @@ CHIP RAM8 {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    //Trata entradas para lógica de seleção
+    Not(in=address[0], out=NotA);
+    Not(in=address[1], out=NotB);
+    Not(in=address[2], out=NotC);
+
+
+    //Seleciona Registro 0
+    And3Way(a=NotA, b=NotB, c=NotC,out=SelR0);
+
+    //Seleciona Registro 1
+    And3Way(a=address[0], b=NotB, c=NotC, out=SelR1);
+
+    //Seleciona Registro 2
+    And3Way(a=NotA, b=address[1], c=NotC, out=SelR2);
+
+    //Seleciona Registro 3
+    And3Way(a=address[0], b=address[1], c=NotC, out=SelR3);
+
+    //Seleciona Registro 4
+    And3Way(a=NotA, b=NotB, c=address[2], out=SelR4);
+
+    //Seleciona Registro 5
+    And3Way(a=address[0], b=NotB, c=address[2], out=SelR5);
+
+    //Seleciona Registro 6
+    And3Way(a=NotA, b=address[1], c=address[2], out=SelR6);
+
+    //Seleciona Registro 7
+    And3Way(a=address[0], b=address[1], c=address[2], out=SelR7);
+
+    // Registrador 0
+    And(a=SelR0, b=load, out=LoadR0);
+    ARegister(in=in, load=LoadR0, out=R0Out);
+
+    // Registrador 1
+    And(a=SelR1, b=load, out=LoadR1);
+    ARegister(in=in, load=LoadR1, out=R1Out);
+
+    // Registrador 2
+    And(a=SelR2, b=load, out=LoadR2);
+    ARegister(in=in, load=LoadR2, out=R2Out);
+
+    // Registrador 3
+    And(a=SelR3, b=load, out=LoadR3);
+    ARegister(in=in, load=LoadR3, out=R3Out);
+
+    // Registrador 4
+    And(a=SelR4, b=load, out=LoadR4);
+    ARegister(in=in, load=LoadR4, out=R4Out);
+
+    // Registrador 5
+    And(a=SelR5, b=load, out=LoadR5);
+    ARegister(in=in, load=LoadR5, out=R5Out);
+
+    // Registrador 6
+    And(a=SelR6, b=load, out=LoadR6);
+    ARegister(in=in, load=LoadR6, out=R6Out);
+
+    // Registrador 7
+    And(a=SelR7, b=load, out=LoadR7);
+    ARegister(in=in, load=LoadR7, out=R7Out);
+
+
+
+    Mux8Way16(a=R0Out, b=R1Out, c=R2Out, d=R3Out, e=R4Out, f=R5Out, g=R6Out, h=R7Out, sel[0]=address[0], sel[1]=address[1], sel[2]=address[2], out=out);
+
 }
