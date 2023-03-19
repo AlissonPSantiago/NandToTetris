@@ -1,0 +1,13 @@
+// if (ny == 1) set y = !y       // bitwise not
+
+
+CHIP CHIPny {
+    IN  
+        in[16];  // 16-bit inputs        
+    OUT 
+        out[16]; // 16-bit output
+
+    PARTS:
+   		Not16(in=in, out=out);
+	
+}

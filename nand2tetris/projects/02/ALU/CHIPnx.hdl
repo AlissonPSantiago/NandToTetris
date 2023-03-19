@@ -1,0 +1,13 @@
+// if (nx == 1) set x = !x       // bitwise not
+
+
+CHIP CHIPnx {
+    IN  
+        in[16];  // 16-bit inputs        
+    OUT 
+        out[16]; // 16-bit output
+
+    PARTS:
+   		Not16(in=in, out=out);
+	
+}

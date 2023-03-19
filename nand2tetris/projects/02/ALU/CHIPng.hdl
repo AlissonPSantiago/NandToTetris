@@ -1,0 +1,13 @@
+// if (zy == 1) set y = 0        // 16-bit constant
+
+
+CHIP CHIPzy {
+    IN  
+        in[16];  // 16-bit inputs        
+    OUT 
+        out[16]; // 16-bit output
+
+    PARTS:
+   		And16(a=in[0..15], b[0..15] = false, out=out);
+	
+}

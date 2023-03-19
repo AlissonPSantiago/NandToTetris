@@ -1,0 +1,13 @@
+CHIP CHIPzr {
+    IN  
+        in[16];  // 16-bit inputs        
+    OUT 
+        out; // 16-bit output
+
+    PARTS:
+   		Or8Way (in=in[0..7], out=zr1);
+		Or8Way(in=in[8..15], out=zr2);
+		Or (a=zr1, b=zr2, out=zr);
+		Not (in=zr, out=out);
+	
+}
