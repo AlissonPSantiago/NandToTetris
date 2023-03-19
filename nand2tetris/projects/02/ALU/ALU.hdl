@@ -26,6 +26,8 @@
 // if (out == 0) set zr = 1
 // if (out < 0) set ng = 1
 
+
+# DESENVOLVIMENTO DO CHIP ---------------------------------------------
 CHIP ALU {
     IN  
         x[16], y[16],  // 16-bit inputs        
