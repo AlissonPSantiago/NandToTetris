@@ -4,6 +4,8 @@
 on its [website](https://www.nand2tetris.org/).
 
 
+
+
 O projeto Nand2Tetris é um curso e uma série de materiais didáticos que visa ensinar os fundamentos da ciência da computação e engenharia de computadores de uma maneira prática e envolvente. O projeto foi desenvolvido por Noam Nisan e Shimon Schocken e é baseado em seu livro "The Elements of Computing Systems: Building a Modern Computer from First Principles" (Os Elementos dos Sistemas de Computação: Construindo um Computador Moderno a partir dos Primeiros Princípios).
 
 O curso Nand2Tetris é dividido em duas partes. A primeira parte foca no projeto e construção de um computador baseado em hardware, começando do zero com a porta lógica NAND, um componente básico da eletrônica digital. Os alunos aprendem sobre circuitos lógicos, memória, aritmética, e processadores, e gradualmente constroem um computador funcional chamado "Hack".
